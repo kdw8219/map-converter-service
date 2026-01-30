@@ -1,4 +1,4 @@
-package com.robot.mapconverter;
+package com.robot.mapconverter.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
