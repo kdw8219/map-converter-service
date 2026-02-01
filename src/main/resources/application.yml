@@ -1,5 +1,18 @@
 spring:
   application:
     name: map-converter-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: map-converter
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.trusted.packages: "com.robot.mapconverter.dto"
+      spring.json.value.default.type: "com.robot.mapconverter.dto.MapUploadMessage"
 server:
   port: 8085
+app:
+  kafka:
+    map-topic: robot-slam-map
